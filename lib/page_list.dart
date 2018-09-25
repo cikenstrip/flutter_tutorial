@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'model_user.dart';
 
 class PageList extends StatelessWidget {
   @override
@@ -7,19 +8,17 @@ class PageList extends StatelessWidget {
         appBar: new AppBar(
           title: new Text("List User"),
         ),
-        body: new ListView(
-          children: <Widget>[
-            ListTile(
-              title: new Text("Nama"),
-              subtitle: new Text("alamat_email@domain.com"),
-              leading: new CircleAvatar(child: new Text("N"),),
-            ),
-            ListTile(
-              title: new Text("Nama"),
-              subtitle: new Text("alamat_email@domain.com"),
-              leading: new CircleAvatar(child: new Text("N"),),
-            ),
-          ],
+        body: new ListView.builder(
+          itemCount: users.length,
+          itemBuilder: (context, int){
+            return ListTile(
+              title: new Text(users[int].first + " " + users[int].last),
+              subtitle: new Text(users[int].email),
+              leading: new CircleAvatar(
+                backgroundImage: new NetworkImage(users[int].picture),
+              ),
+            );
+          },
         ),
       );
     }
