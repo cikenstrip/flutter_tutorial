@@ -10,7 +10,12 @@ class HelloWorld extends StatelessWidget {
             title: new Text("Hello World"),
           ),
           body: new Center(
-            child: new Text("Hello world! "),
+            child: RaisedButton(
+              child: Text('Lihat List User'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/pagelist');
+              },
+            ),
           ),
       );
     }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'page_list.dart';
 
 class DrawercustomWidget extends StatelessWidget {
   @override
@@ -18,12 +17,7 @@ class DrawercustomWidget extends StatelessWidget {
             title: Text('List User'),
             onTap: () {
               Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PageList()
-                ),
-              );
+              Navigator.pushNamed(context, '/pagelist');
             },
           ),
         ],
