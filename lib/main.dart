@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'helloworld.dart';
 import 'page_list.dart';
+import 'page_splash.dart';
 
 void main() => runApp(new MyApp());
 
@@ -10,10 +11,10 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         title: "Aplikasi Pertama",
         routes: {
-          '/': (context)=> HelloWorld(),
+          '/': (context)=> PageSplash(),
+          '/pagehelloworld': (context)=> HelloWorld(),
           '/pagelist': (context)=> PageList(),
         },
-        initialRoute: '/',
       );
   }
 }
