@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'widget_drawercustom.dart';
 
 class HelloWorld extends StatelessWidget {
@@ -24,9 +25,24 @@ class MenuutamaWidgetState extends State<MenuutamaWidget> {
 
   int _visitingCounter = 0;
 
-  void pagelistVisited() {
+  @override
+  void initState() {
+    super.initState();
+    loadVisitingcounter();
+  }
+
+  void loadVisitingcounter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _visitingCounter = (prefs.getInt('visitingCounter') ?? 0);
+    });
+  }
+
+  void pagelistVisited() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       _visitingCounter = _visitingCounter + 1;
+      prefs.setInt('visitingCounter', _visitingCounter);
     });
   }
 
