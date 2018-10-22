@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:map_view/map_view.dart';
 import 'helloworld.dart';
 import 'page_list.dart';
 import 'page_splash.dart';
+import 'page_map.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  MapView.setApiKey("AIzaSyBahD-7rlR50U23MsUc0AipO6PJhUQdYP0");
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,6 +19,7 @@ class MyApp extends StatelessWidget {
           '/': (context)=> PageSplash(),
           '/pagehelloworld': (context)=> HelloWorld(),
           '/pagelist': (context)=> PageList(),
+          '/pagemap': (context)=> PageMap(),
         },
       );
   }

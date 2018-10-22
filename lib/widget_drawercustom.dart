@@ -20,6 +20,13 @@ class DrawercustomWidget extends StatelessWidget {
               Navigator.pushNamed(context, '/pagelist');
             },
           ),
+          ListTile(
+            title: Text('Map'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/pagemap');
+            },
+          ),
         ],
       ),
     );
