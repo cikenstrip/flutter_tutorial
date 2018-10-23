@@ -21,7 +21,7 @@ class DrawercustomWidget extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Map'),
+            title: Text('Map Static'),
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/pagemap');
@@ -32,6 +32,13 @@ class DrawercustomWidget extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
               Navigator.pushNamed(context, '/pagegps');
+            },
+          ),
+          ListTile(
+            title: Text('Map with Toolbar'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/pagemap2');
             },
           ),
         ],

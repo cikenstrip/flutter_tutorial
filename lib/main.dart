@@ -4,6 +4,7 @@ import 'helloworld.dart';
 import 'page_list.dart';
 import 'page_splash.dart';
 import 'page_map.dart';
+import 'page_map2.dart';
 import 'page_gps.dart';
 
 void main() {
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           '/pagehelloworld': (context)=> HelloWorld(),
           '/pagelist': (context)=> PageList(),
           '/pagemap': (context)=> PageMap(),
+          '/pagemap2': (context)=> PageMap2(),
           '/pagegps': (context)=> PageGps(),
         },
       );
