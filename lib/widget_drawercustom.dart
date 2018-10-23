@@ -27,6 +27,13 @@ class DrawercustomWidget extends StatelessWidget {
               Navigator.pushNamed(context, '/pagemap');
             },
           ),
+          ListTile(
+            title: Text('My Location'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/pagegps');
+            },
+          ),
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'helloworld.dart';
 import 'page_list.dart';
 import 'page_splash.dart';
 import 'page_map.dart';
+import 'page_gps.dart';
 
 void main() {
   MapView.setApiKey("AIzaSyBahD-7rlR50U23MsUc0AipO6PJhUQdYP0");
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
           '/pagehelloworld': (context)=> HelloWorld(),
           '/pagelist': (context)=> PageList(),
           '/pagemap': (context)=> PageMap(),
+          '/pagegps': (context)=> PageGps(),
         },
       );
   }
