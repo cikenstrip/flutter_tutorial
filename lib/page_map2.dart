@@ -9,7 +9,7 @@ class PageMap2 extends StatefulWidget {
 class _PageMap2State extends State<PageMap2> {
   MapView mapView;
   CameraPosition cameraPosition;
-  var apiKey = "AIzaSyBahD-7rlR50U23MsUc0AipO6PJhUQdYP0";
+  var apiKey = "GET_YOUR_GOOGLE_MAP_API_KEY";
   var staticMapProvider;
   var latLong = new Location(-6.90389, 107.61861);
   var zoomLevel = 12.0;

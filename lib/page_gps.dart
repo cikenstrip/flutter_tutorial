@@ -60,7 +60,7 @@ class _PageGpsState extends State<PageGps> {
         new Image.network(
           "https://maps.googleapis.com/maps/api/staticmap?"+
           "center=${_currentLocation['latitude']},${_currentLocation['longitude']}"+
-          "&zoom=18&size=640x400&key=AIzaSyBahD-7rlR50U23MsUc0AipO6PJhUQdYP0")
+          "&zoom=18&size=640x400&key=GET_YOUR_GOOGLE_MAP_API_KEY")
       ];
     }
 
