@@ -1,18 +1,22 @@
 import 'package:map_view/map_view.dart';
+import 'package:flutter_tutorial/utils/gps_util.dart';
 
-class MapUtil {
+class MapUtil implements GpsUtilListener {
 
   CameraPosition cameraPosition;
   var staticMapProvider;
-  var location = new Location(-6.90251125, 107.61878508364904);
+  var location = new Location(-6.90251125, 107.61878508364990);
   var zoomLevel = 18.0;
   MapView mapView;
 
+  GpsUtils gpsUtils;
   MapUtil(_pageMaprouteState);
 
   init() {
     mapView = new MapView();
-    staticMapProvider = new StaticMapProvider("GET_YOUR_GOOGLE_MAP_API_KEY");
+    gpsUtils = new GpsUtils(this);
+    gpsUtils.init();
+    staticMapProvider = new StaticMapProvider("AIzaSyCYBGhU1WEp_o_ZlFuBiogyyY_P9aXalUQ");
   }
 
   List<Marker> getMarker() {
@@ -35,6 +39,13 @@ class MapUtil {
   CameraPosition getCamera() {
     cameraPosition = new CameraPosition(getMyLocation(), zoomLevel);
     return cameraPosition;
+  }
+
+  @override
+  whenLocationChange(Map<String, double> currentLocation) {
+    location = Location(
+      currentLocation["latitude"], 
+      currentLocation["longitude"]);
   }
 
 }

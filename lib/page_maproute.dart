@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/utils/map_util.dart';
+import 'package:map_view/map_view.dart';
 
 class PageMaproute extends StatefulWidget {
   @override
@@ -9,12 +10,14 @@ class PageMaproute extends StatefulWidget {
 class _PageMaprouteState extends State<PageMaproute> {
 
   MapUtil mapUtil;
+  String myLocation = "";
 
   @override
   void initState() {
     super.initState();
     mapUtil = new MapUtil(this);
     mapUtil.init();
+    updateScreen(mapUtil.getMyLocation());
   }
 
   @override
@@ -30,7 +33,7 @@ class _PageMaprouteState extends State<PageMaproute> {
         ),
         Center(
           child: Container(
-            child: new Text("Your location: ",
+            child: new Text(myLocation,
               textAlign: TextAlign.center,
             ),
             padding: const EdgeInsets.all(20.0),
@@ -61,6 +64,15 @@ class _PageMaprouteState extends State<PageMaproute> {
         child: screenWidget,
       ),
     );
+  }
+
+  @override
+  updateScreen(Location location) {
+    myLocation = "You are at: " +
+        location.latitude.toString() +
+        ", " +
+        location.longitude.toString();
+    setState(() {});
   }
 
 }
