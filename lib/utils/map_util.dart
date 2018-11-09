@@ -1,5 +1,6 @@
 import 'package:map_view/map_view.dart';
 import 'package:flutter_tutorial/utils/gps_util.dart';
+import 'package:flutter_tutorial/page_maproute.dart';
 
 class MapUtil implements GpsUtilListener {
 
@@ -10,7 +11,9 @@ class MapUtil implements GpsUtilListener {
   MapView mapView;
 
   GpsUtils gpsUtils;
-  MapUtil(_pageMaprouteState);
+  ScreenListener _screenListener;
+  MapUtil(this._screenListener);
+  //MapUtil(_pageMaprouteState);
 
   init() {
     mapView = new MapView();
@@ -46,6 +49,7 @@ class MapUtil implements GpsUtilListener {
     location = Location(
       currentLocation["latitude"], 
       currentLocation["longitude"]);
+    _screenListener.updateScreen(location);
   }
 
 }
