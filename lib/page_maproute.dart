@@ -46,7 +46,7 @@ class _PageMaprouteState extends State<PageMaproute> implements ScreenListener {
         Padding(
           padding: const EdgeInsets.all(10.0),
           child: RaisedButton(
-            onPressed: () { },
+            onPressed: () => getMapRoute(),
             padding: EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -76,6 +76,13 @@ class _PageMaprouteState extends State<PageMaproute> implements ScreenListener {
         location.latitude.toString() + ", " + 
         location.longitude.toString();
     setState(() {});
+  }
+
+  getMapRoute() {
+    setState(() {});
+    mapUtil.getDirectionSteps(
+      mapUtil.destination.latitude,
+      mapUtil.destination.longitude);
   }
 
 }
